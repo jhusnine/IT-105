@@ -1,0 +1,93 @@
+CONSTANT - it can in input and output for values.
+#include <iostream>
+User Output & Input
+cout is pronounced "see out"
+cin is pronounced "see in"
+
+EX#1
+#include <iostream>
+using namespace std;
+int main()
+{
+    float f1 = 35e3;
+    double d1 = 12E4;
+    cout << f1 << "\n";
+    cout << d1;
+    return 0;
+}
+EXPECTED OUTPUT:
+35000
+120000
+
+STRING LIBRARY - #include <string>
+ARITMETHIC OPERATORS
++,-,*,/,%,++,--
+COMPARISON OPERATORS
+== , !=, >, <, >=, <=
+LOGICAL OPERATORS
+&&, ||, !
+
+
+
+ACTIVITY 1
+#include <iostream>
+using namespace std;
+int main(){
+    
+    int tempC = 20;
+    
+    int tempF = (tempC * 9.0 / 5.0) + 32;
+    
+    tempC += 5;
+    tempF = (tempC * 9.0 / 5.0) + 32;
+    cout << "Initial Temperature: " << tempC << "C = " << tempF << "\n";
+    
+    tempC -= 5;
+    tempF = (tempC * 9.0 / 5.0) + 32;
+    cout << "Updated Temperature:  " << tempC << "C =" << tempF  ;
+    
+    
+    return 0;
+}
+
+2
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int soilMoisture, tankLevel;
+    
+    cout << "Enter soil moisture (%): ";
+    cin >> soilMoisture;
+    cout << "Enter tanklevel (%): ";
+    cin >> tankLevel;
+    
+    if (soilMoisture <30 && tankLevel > 50){
+        cout << "Pump ON " ;
+    
+    } else {
+        cout << "Pump OFF"  ;
+    }
+    return 0;
+}
+
+3
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int lightValue;
+    
+    cout << "Enter light sensor value (0-1023): ";
+    cin >> lightValue;
+    if (lightValue < 200) {
+        cout << "Too Dark - Turn ON LED" ;
+    } else if (lightValue >= 200 && lightValue <= 700) {
+        cout << "Moderate Light - LED OFF";
+    } else {
+        cout << "Too Bright - Close Window Shade";
+    }
+    return 0;
+}
