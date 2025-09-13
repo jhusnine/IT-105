@@ -1,0 +1,36 @@
+Smart Parking Lot Manager
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int maxCapacity = 300;
+    int totalSlots, numCar;
+
+    cout << "Enter total parking slots available: ";
+    cin >> totalSlots;
+    cout << "Enter number of cars currently parked: ";
+    cin >> numCar;
+
+    if (totalSlots > maxCapacity || numCar > maxCapacity) {
+        cout << "Error! Maximum capacity reached!\n";
+    }
+    else if (numCar > totalSlots) {
+        cout << "Error! Number of cars cannot exceed total slots!\n";
+    }
+    else {
+        if (numCar == totalSlots) {
+            cout << "Parking Full – Redirect Cars\n";
+        }
+        else {
+            int remainSlots = totalSlots - numCar;
+            cout << "Slots Available: " << remainSlots << "\n";
+            if ((double)numCar / totalSlots > 0.8) {
+                cout << "High Occupancy Warning\n";
+            }
+        }
+    }
+    return 0;
+}
+
+
+
