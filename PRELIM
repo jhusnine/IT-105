@@ -32,5 +32,40 @@ int main() {
     return 0;
 }
 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int moisture, time;
+    double water;
+    
+    cout << "Enter soil moisture percentage (0-100): ";
+    cin >> moisture;
+    
+    cout << "Enter time of day (0-23): ";
+    cin >> time;
+    
+    if (moisture < 20) {
+        cout << "Critical Moisture Level! Immediate Irrigation Needed";
+        water = (40 - moisture) * 0.5;
+        cout << "Water needed: " << water << " liters" ;
+    }
+    else if (moisture < 40) {
+        if ((time >= 5 && time <= 8) || (time >= 17 && time <= 20)) {
+            cout << "Irrigation ON" << endl;
+        }
+        else {
+            cout << "Irrigation OFF - Not optimal time";
+        }
+        water = (40 - moisture) * 0.5;
+        cout << "Water needed: " << water << " liters";
+    }
+    else {
+        cout << "Soil Moisture Optimal – Irrigation OFF";
+    }
+    
+    return 0;
+}
+
 
 
